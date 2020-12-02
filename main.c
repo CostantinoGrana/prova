@@ -37,46 +37,11 @@ bool minore_charptr(void *a, size_t n, size_t m) {
 
 int main(void)
 {
-	int a[] = { 7, -3, 5, 9, -1, -6, 2 };
-	double b[] = { 7.9, -3.2, 5.8, 9.1, -1.08, -6.2, 2.3 };
-	char *c[] = { "casa", "aereo", "prova", "banana", "zio", "gioco", "test" };
+	int a[] = { 7, -3, 5, 9, -1, -6, 2, 10, 20, 30 };
 	size_t n = 7;
 
 	ordina(a, sizeof(int), n, minore_int);
-	ordina(b, sizeof(double), n, minore_double);
-	ordina(c, sizeof(char*), n, minore_charptr);
 
 	return 0;
 }
 
-/* Versione 1 - solo int
-#include <stdlib.h>
-
-void swap_elem(int *a, size_t n, size_t m) {
-	int tmp = a[n];
-	a[n] = a[m];
-	a[m] = tmp;
-}
-
-void ordina(int *a, size_t n) {
-	for (size_t i = 0; i < n - 1; i++) {
-		size_t indice_min = i;
-		for (size_t j = i + 1; j < n; j++) {
-			if (a[j] < a[indice_min]) {
-				indice_min = j;
-			}
-		}
-		swap_elem(a, indice_min, i);
-	}
-}
-
-int main(void)
-{
-	int a[] = { 7, -3, 5, 9, -1, -6, 2 };
-	size_t n = 7;
-
-	ordina(a, n);
-
-	return 0;
-}
-*/
